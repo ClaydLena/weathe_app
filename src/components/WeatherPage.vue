@@ -1,11 +1,12 @@
 <script>
-    import InputSearch from './InputSearch.vue'; 
+    import 'bootstrap/dist/css/bootstrap.css'
+  
     import CityCard from './CityCard.vue';
 
-    export default {
+    export default {      
       name:'WeatherPage',
       components:{
-        InputSearch, CityCard
+         CityCard
       },
       data(){
         return{
@@ -17,20 +18,36 @@
         submitForm(e){
             e.preventDefault();
             this.cidade = this.input_city;
-        }
+        },
+    },
+    
+    created(){
+      const temp =[]
+      const cities =["Maputo", "Macia", "Inhambane", "Xai-xai","Boane","Beira","Chimoio", "Pemba","Vilanculos", "Tete", "Quelimane", "Nampula"]  
+      cities.forEach((city)=>{
+        fetch(
+          "https://api.openweathermap.org/data/2.5/weather?q="+city+",mz&units=metric&APPID=250585e7bf3a2a19e0c48b7945ca6982"
+        )
+          .then((resp) => resp.json())
+          .then((data) => {
+          temp.push(data)
+          console.log(data)
+          })
+      })
+
     }
-    }
+  }  
 </script>
     
     <template>
       <header>
-        <h6>{{input_city}}</h6>
-        <form action="" id="app-form">
-            <input type="text" v-model="input_city" placeholder="Digite seu nome">
-            <input type="submit" value="Enviar" v-on:click="submitForm">
-        </form>
-        <InputSearch v-model="input_city" v-on:click="submitForm" @change="submitForm"/>
-        <h6>{{input_city}}</h6>
+        <h6 class="cidade">{{input_city}}</h6>
+        <div class="inputSearch">
+          <div class="input-group mb-3">
+            <input type="text" v-model="input_city" class="form-control" placeholder="Pesquisar uma cidade">
+            <input type="submit" class="btn btn-outline-secondary" value="Pesquisar" v-on:click="submitForm">
+          </div>
+        </div>
       </header>
 
       <div class="cont">

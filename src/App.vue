@@ -66,4 +66,10 @@ font-size: 13px;
 margin-top: 35px;
 text-align: center;
 }
+.cidade{
+font-weight: 400;
+margin-top: 35px;
+text-align: center;
+position:absolute;
+}
 </style>
