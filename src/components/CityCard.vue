@@ -57,10 +57,5 @@
     display: grid;
     grid-auto-columns: auto auto;
      }
-    
-    @media (min-width: 1024px) {
-      
-      
-    }
     </style>
     
