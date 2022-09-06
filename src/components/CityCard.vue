@@ -5,21 +5,24 @@
       return {
         text: ''
       }
-    }
-  }
+    },
+   props:['nome', 'temp_max','temp_min','foto'],
+}
+
+  
 </script>
 
 <template>
     <div class="item">
         <div class="titulo">
-            <h3> <slot name="heading"></slot> </h3>
+            <h3><slot name="heading">{{nome}}</slot> </h3>
         </div>
         <div class="icone">
-            <i> <slot name="icon"></slot></i>
+            <i> <slot name="icon">{{foto}}</slot></i>
         </div>
         <div class="detalhes"> 
-            <div></div>
-            <div></div>
+            <div>{{temp_max}}</div>
+            <div>{{temp_min}}</div>
         </div>
     </div>
   </template>
