@@ -52,10 +52,7 @@ padding: 1rem;
 
 }
 
-.detalhes{
-  display: grid;
-  grid-template-columns: auto auto;
-}
+
 .card {
 background-color: transparent;
 display: flex;

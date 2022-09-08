@@ -6,10 +6,9 @@
         text: ''
       }
     },
-   props:['nome', 'temp_max','temp_min','foto'],
-}
-
-  
+    
+   props:['nome', 'temp_max','temp_min','ceu']
+} 
 </script>
 
 <template>
@@ -18,11 +17,11 @@
             <h3><slot name="heading">{{nome}}</slot> </h3>
         </div>
         <div class="icone">
-            <i> <slot name="icon">{{foto}}</slot></i>
+            <p class="ceu">{{ceu}}</p>
         </div>
         <div class="detalhes"> 
-            <div>{{temp_max}}</div>
-            <div>{{temp_min}}</div>
+            <div>Max {{temp_max}}</div>
+            <div>Min {{temp_min}}</div>
         </div>
     </div>
   </template>
@@ -47,7 +46,12 @@
     .titulo {
       font-size: 1.2rem;
       font-weight: 500;
-      margin-bottom: 0.4rem;
+      margin: 20px;
+    }
+
+    .ceu{
+      margin:35%;
+      place-self: center;
     }
     
     .icone {
@@ -57,8 +61,10 @@
     }
     
     .detalhes{
-    display: grid;
-    grid-auto-columns: auto auto;
-     }
+      margin-top:50%;
+      display: grid;
+      grid-template-columns: auto auto;
+      justify-content: space-between;
+    }
     </style>
     
