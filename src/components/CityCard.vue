@@ -17,9 +17,12 @@
             <h3><slot name="heading">{{nome}}</slot> </h3>
         </div>
         <div class="icone">
+             <img v-if="ceu='clouds'" src=""/>
+             <img v-if="ceu='clear'" src=""/>
+             <img v-if="ceu='clouds'" src=""/>
             <p class="ceu">{{ceu}}</p>
         </div>
-        <div class="detalhes"> 
+        <div class="detalhes" v-if="temp_max"> 
             <div>Max {{temp_max}}</div>
             <div>Min {{temp_min}}</div>
         </div>
@@ -50,7 +53,8 @@
     }
 
     .ceu{
-      margin:35%;
+      font-size: 18px;
+      margin:25%;
       place-self: center;
     }
     
@@ -61,10 +65,10 @@
     }
     
     .detalhes{
+      column-gap: 2%;
       margin-top:50%;
       display: grid;
       grid-template-columns: auto auto;
       justify-content: space-between;
     }
     </style>
-    

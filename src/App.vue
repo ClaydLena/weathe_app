@@ -49,9 +49,7 @@ padding: 1rem;
 .cards_item {
   width: 33.3333%;
 }
-
 }
-
 
 .card {
 background-color: transparent;

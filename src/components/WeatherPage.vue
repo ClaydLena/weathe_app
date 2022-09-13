@@ -16,7 +16,6 @@
           max: " ",
           min:" ",
           ceu:" ",
-
       }
   },
   methods:{
@@ -30,7 +29,7 @@
         const cities =["Maputo", "Macia", "Inhambane", "Xai-xai","Boane","Beira","Chimoio", "Pemba","Vilanculos", "Tete", "Quelimane", "Nampula"]  
         cities.forEach((city)=>{
           fetch(
-            "https://api.openweathermap.org/data/2.5/weather?q="+city+",mz&units=metric&APPID=43102702ba5a4fb88e0aaff670064883"
+            "https://api.openweathermap.org/data/2.5/weather?q="+city+",mz&units=metric&APPID=5179c935d2c367b3684724f4827665d1"
           )
             .then((resp) => resp.json())
             .then((data) => {
@@ -49,12 +48,7 @@
   created(){
     this.temperaturas();
   },
-  mounted(){
-    var a = 1
-    while (a==1){
-      setTimeout(this.temperaturas(), 1000)
-    }
-  }
+  
 }
 
 </script>
@@ -93,7 +87,5 @@
 
       </ul>
     </div>
-    <li v-for="(technology, index) in dados" v-bind:key="index">
-              {{technology.name}}</li>
     <h3 class="txt">Clayd Lena Agostinho Nandza</h3>
   </template>
