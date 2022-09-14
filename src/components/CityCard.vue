@@ -17,9 +17,6 @@
             <h3><slot name="heading">{{nome}}</slot> </h3>
         </div>
         <div class="icone">
-             <img v-if="ceu='clouds'" src=""/>
-             <img v-if="ceu='clear'" src=""/>
-             <img v-if="ceu='clouds'" src=""/>
             <p class="ceu">{{ceu}}</p>
         </div>
         <div class="detalhes" v-if="temp_max"> 
