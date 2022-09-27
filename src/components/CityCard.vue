@@ -18,6 +18,11 @@
         </div>
         <div class="icone">
             <p class="ceu">{{ceu}}</p>
+            <div class="img">
+              <img v-if="ceu ==='Clouds'" src="./imgs/cloudy.png" class="img"/>
+              <img v-if="ceu ==='Clear'" src="./imgs/sun.png" class="img"/>
+              <img v-if="ceu ==='Haze'" src="./imgs/cloudy.png" class="img"/>
+            </div>
         </div>
         <div class="detalhes" v-if="temp_max"> 
             <div>Max {{temp_max}}</div>
@@ -59,6 +64,12 @@
       place-items: center;
       place-content: center;
       margin-bottom: 0.4rem;
+    }
+    .img{
+      align-self: center;
+      position: absolute;
+      width: 80%;
+      height: 70%;
     }
     
     .detalhes{
